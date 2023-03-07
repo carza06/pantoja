@@ -1,0 +1,76 @@
+.modalmask {
+    position: fixed;
+    font-family: Arial, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalmask:target {
+    opacity:1;
+    pointer-events: auto;
+}/*
+|--------------------------------------------------------------------------
+| CSS Aplicacion
+|--------------------------------------------------------------------------
+*/
+/*
+|--------------------------------------------------------------------------
+| Colores Corporativos
+|--------------------------------------------------------------------------
+*/
+.color-corp-azul{
+  color: #0c4da2;
+}
+.color-corp-verde{
+  color: #2D7572;
+}
+.color-corp-naranja{
+  color: orange;
+}
+/*
+|--------------------------------------------------------------------------
+| Configuracion de la barra de menu superior
+|--------------------------------------------------------------------------
+*/
+/*
+|--------------------------------------------------------------------------
+| Menu de Usuario
+|--------------------------------------------------------------------------
+*/
+.nav-avatar-usuario{
+	margin:-4px 8px 0 0;
+	border-radius:100%;
+	border:2px solid #FFF;
+	width: 48px; height: 48px;
+	max-width:48px
+}
+
+.nav-avatar-logo{
+    margin:-4px 8px 0 0;
+    border-radius:100%;
+    border:2px solid #FFF;
+    width: 120px; height: 80px;
+    max-width:80px
+}
+.menu-usuario>li>a{
+	padding-top:6px;
+	padding-bottom:6px
+}
+
+.bigger-90{font-size:75%!important}
+.user-title-label-left{margin-left:-75px}
+
+.panel-cabecera {
+    padding: 1px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}

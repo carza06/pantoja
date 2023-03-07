@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Facturas</title>
+    {!! Html::style('assets/css/bootstrap.css') !!}
+    
+    {!! Html::style('assets/css/app.css') !!}
+    {!! Html::script('assets/js/ace-extra.min.js') !!}
+  </head>
+  <body>
+ 
+    @php $i = 0; @endphp
+    @foreach($data as $factura)
+      @php $i++; @endphp
+        <table>
+            <tbody>
+              <tr>
+                  <td><img src="{{ public_path()}}/img/app/logo.jpg" width="100" height="100"></td>
+                  <td align="center">AYUNTAMIENTO MUNICIPAL DE LOS ALCARRIZOS (AMA) Calle Duarte #334,Edif. Lizardo, Sector Landia<br>RNC: 43004236<br>Teléfono (809) 338-2736
+
+
+                  </td>
+                  
+                    <td style="vertical-align: top;">
+                      <table>
+                      <tr>
+                        <td style="vertical-align: top;"><img src="{{ public_path()}}/img/app/logo_web.png" width="120" height="40">
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="right">Nro Factura 00000{{ $factura->id }}</td>
+                      </tr>
+                      <tr>
+                        <td align="right">Fecha: {{ date("d-m-Y", strtotime($factura->created_at)) }}</td>
+                      </tr>
+                      </table>
+                    </td>
+                  
+              </tr>
+              <tr>
+                  <td>&nbsp;</td>
+                  <td align="center"><h3>FACTURA</h3></td>
+                  <td>&nbsp;</td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <table width="100%">
+                    <tr>
+                      <td width="10%">Nombre:</td>
+                      <td width="45%">{{ $factura->sujetopasivo }}</td>
+                      <td width="10%">Codigo</td>
+                      <td width="35%">{{ $factura->codigouso }}</td>
+                    </tr>
+                    <tr>
+                      <td>Sector:</td>
+                      <td>{{ $factura->sector->sector }}</td>
+                      <td>Uso Suelo</td>
+                      <td>{{ $factura->usosuelo }}</td>
+                    </tr>
+                    <tr>
+                      <td>Barrio:</td>
+                      <td>{{ $factura->barrio->barrio }}</td>
+                      <td>Inmueble</td>
+                      <td>{{ $factura->idinm }}</td>
+                    </tr>
+                    <tr>
+                      <td>Calle:</td>
+                      <td>{{ $factura->via->nombre }}</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td>Direccion:</td>
+                      <td>{{ $factura->direccion }}</td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+        <hr>
+        <table width="100%" border="1">
+
+        <tr>
+          <td width="5%">#</td>
+          <td width="30%" >Concepto</td>
+          <td width="10%" align="center">Categoria</td>
+          <td width="15%" align="center">RD$ Deuda</td>
+          <td width="15%" align="center">RD$ Mes</td>
+          <td width="25%" align="center">RD$ Total</td>
+        </tr>
+     
+        @php $detalle = $factura->detalle(); @endphp
+        @foreach($detalle as )   
+
+        
+        <tr>
+          <td scope="row">1</td>
+          <td>Recoleccion Desechos Solidos</td>
+          <td align="center">12</td>
+          <td>0.00</td>
+          <td align="right">1950.00</td>
+          <td align="right">1950.00</td>
+        </tr>
+      @endif
+
+      @if($i == 2)        
+        <tr>
+          <td scope="row">1</td>
+          <td>Recoleccion Desechos Solidos</td>
+          <td align="center">8</td>
+          <td align="right">0.00</td>
+          <td align="right">500.00</td>
+          <td align="right">500.00</td>
+        </tr>
+      @endif
+          @if($i == 1)
+         <tr>
+          <td colspan="5" align="right">RD$ Total</td>
+          <td align="right">1950.00</td>
+        </tr>
+        @endif  
+         @if($i == 2) 
+        <tr>
+          <td colspan="5" align="right">RD$ Total</td>
+          <td align="right">500.00</td>
+        </tr>  
+        @endif  
+        </table>
+        <hr>
+        <br>
+        <br>
+
+          @if($i == 2)
+            @php $i = 0; @endphp
+            <div style="page-break-after:always;"></div>
+            @break
+          @endif
+      <br>
+    @endforeach
+  </body>
+</html>
