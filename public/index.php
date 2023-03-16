@@ -7,13 +7,6 @@
  * @author   Taylor Otwell <taylor@laravel.com>
  */
 
-if((isset($_SERVER["HTTP_X_FORWARDED_PROTO"]) && $_SERVER["HTTP_X_FORWARDED_PROTO"] === 'http')){
-
-    $redirect = 'https://'. $_SERVER['HTTP_HOST'] - $_SERVER['REQUEST_URI'];
-    header(string: 'HTTP/1.1 301 Moved Permanently');
-    header(string: 'Location' . $redirect);
-}
-
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
