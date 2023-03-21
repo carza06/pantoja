@@ -262,7 +262,7 @@ class FacturasController extends Controller
 		}else{
 			$view =  \View::make('pdf.factura', compact('data'))->render();	
 		}
-		return $view;
+		
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         return $pdf->stream('factura.pdf');	
@@ -273,7 +273,7 @@ class FacturasController extends Controller
 
 		$data = \App\Modelos\Facturacion\Facturas::find($id[0]['id']);
 		$view =  \View::make('pdf.facturap')->with(['data'=>$data])->render();	
-		return $view;
+		
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         return $pdf->stream('factura.pdf');	
