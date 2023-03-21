@@ -24,8 +24,8 @@ class EstadosCuentasController extends Controller
           $facturas = \App\Modelos\Facturacion\Facturas::where('idtributo',$idtributo)->where('created_at','<',$fecha)->orderby('created_at','desc')->get();
           
           if($request->imprimir){
-            //$view =  \View::make('pdf.edocta')->with(['sp'=>$sp, 'ubg'=>$ubg,'inm'=>$inm,'ds'=>$ds,'pub'=>$pub,'edo'=>$edo,'idtributo'=>$idtributo])->render();
-            return view('pdf.edocta')->with(['sp'=>$sp, 'ubg'=>$ubg,'inm'=>$inm,'ds'=>$ds,'pub'=>$pub,'edo'=>$edo,'idtributo'=>$idtributo])->render();
+            $view =  \View::make('pdf.edocta')->with(['sp'=>$sp, 'ubg'=>$ubg,'inm'=>$inm,'ds'=>$ds,'pub'=>$pub,'edo'=>$edo,'idtributo'=>$idtributo])->render();
+            // return view('pdf.edocta')->with(['sp'=>$sp, 'ubg'=>$ubg,'inm'=>$inm,'ds'=>$ds,'pub'=>$pub,'edo'=>$edo,'idtributo'=>$idtributo])->render();
         
             $pdf = \App::make('dompdf.wrapper');
             $pdf->loadHTML($view);

@@ -144,7 +144,7 @@
                 <tr>
                   <td>
                     <p>
-                    <img align="right" src="{{ url('/')}}/img/app/logotipo.jpg" width="100" height="90">
+                    <img align="right" src="{{ url('/')}}/img/app/Logotipo.jpg" width="100" height="90">
                     </p><br><br><br><br><br><br>
                   </td>
                 </tr>
