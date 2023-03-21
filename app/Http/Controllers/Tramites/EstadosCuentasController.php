@@ -17,7 +17,7 @@ class EstadosCuentasController extends Controller
         if($request->idtributo){          
           $idtributo = $request->idtributo;
           \Session::put('IdTributo',$idtributo);
-          list($sp,$ubg,$inm,$ds,$pub,$edo) = $this->infotributo($idtributo);
+          list($sp,$ubg,$inm,$ds,$pub,$edo,$amb) = $this->infotributo($idtributo);
     
           $bancos = \App\Modelos\Configuracion\Bancos::all();
           $fecha = date('Y').'-'.date('m').'-01';
@@ -33,7 +33,7 @@ class EstadosCuentasController extends Controller
             return $pdf->download($archivo);
            
           }else{
-            return view('tramites.edocuenta')->with(['sp'=>$sp, 'ubg'=>$ubg,'inm'=>$inm,'ds'=>$ds,'pub'=>$pub,'edo'=>$edo,'bancos'=>$bancos,'facturas'=>$facturas]);
+            return view('tramites.edocuenta')->with(['sp'=>$sp, 'amb'=>$amb, 'ubg'=>$ubg,'inm'=>$inm,'ds'=>$ds,'pub'=>$pub,'edo'=>$edo,'bancos'=>$bancos,'facturas'=>$facturas]);
           }
         }
         return view('tramites.edocuenta');
@@ -79,23 +79,26 @@ class EstadosCuentasController extends Controller
                       }
                       $inm = null;
                       $pub = null;
-                     return [$sp,$ubg,$inm,$ds,$pub,$edo];                    
+                      $amb = null;
+                     return [$sp,$ubg,$inm,$ds,$pub,$edo,$amb];                    
               break;
               case 3:
                 $inm = null;
                 $ds = null;
+                $amb = null;
                 $datos = \App\Modelos\Tributos\PermisoPublicidad::where('idtributo',$idtributo)->get();
                 foreach ($datos as $var) {
                   $pub['idtributo'] = $var->idtributo;
                   $pub['desde'] = $var->desde;
                   $pub['hasta'] = $var->hasta;                  
                 }
-                return [$sp,$ubg,$inm,$ds,$pub,$edo];
+                return [$sp,$ubg,$inm,$ds,$pub,$edo,$amb];
               case 1:
                 $inm = null;
                 $ds = null;
                 $pub = null;
-                return [$sp,$ubg,$inm,$ds,$pub,$edo];
+                $amb = 1;
+                return [$sp,$ubg,$inm,$ds,$pub,$edo,$amb];
               default:
 
               

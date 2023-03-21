@@ -82,7 +82,7 @@
 			@if(isset($ds))
 			<a href="{{ route('imprimirfactura',[$idtributo])}}" target="_blank"  class="btn btn-info"><i class="fa fa-file-text"></i></a>
 			@endif
-			@if(isset($pub))
+			@if(isset($pub) || $amb == 1)
 			<a href="{{ route('imprimirfacturapub',[$idtributo])}}" target="_blank"  class="btn btn-info"><i class="fa fa-file-text"></i></a>
 			@endif
 			<button class="btn btn-info"><i class="fa fa-envelope-o"></i></button>
@@ -109,10 +109,11 @@
 													
 							<tbody>
 								<tr>
+									<?php $total = 0;?>
 								@foreach ($edo as $detalle)
-									@php 
-									$total+=$detalle->montoremanente;
-									@endphp
+									<?php
+									$total+=$detalle->montoremanente;?> 
+									
 									<td>{{$detalle->fecha}}</td>
 									<td>{{$detalle->descripcion}}</td>
 									@if($detalle->idtipomovimientoedo == 2 || $detalle->idtipomovimientoedo == 7 || $detalle->idtipomovimientoedo == 8  )
