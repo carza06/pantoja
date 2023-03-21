@@ -308,8 +308,8 @@ class FacturasController extends Controller
 					}
 			        $pdf = \App::make('dompdf.wrapper');
 			        $pdf->loadHTML($view);
-			        // return $pdf->stream('factura.pdf');	
-					return $view;			
+			        return $pdf->stream('factura.pdf');	
+							
 				}else{
 					echo 'la factura ya tiene un valor asignado';
 				}

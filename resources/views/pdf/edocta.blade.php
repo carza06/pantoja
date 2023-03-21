@@ -136,7 +136,7 @@
 					<h4>Usuario:</h4>
 				</div>
 				<div class="col-xs-6">
-				<img align="right" src="{{url('/')}}/img/app/logotipo.jpg" style="width: 10%; margin-top: 2%;"> <br><br>
+				<img align="right" src="{{url('/')}}/img/app/Logotipo.jpg" style="width: 10%; margin-top: 2%;"> <br><br>
 				<div align="center">"SOLO PARA USO EXCLUSIVO DE LA EMPRESA D&D 2311 SERVICE AND SOLUTIONS"</div>         
 				</div>
 				</div>

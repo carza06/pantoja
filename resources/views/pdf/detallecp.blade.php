@@ -47,7 +47,7 @@
   </tr>
 </table>
 <div align="right">
-<img align="right" src="{{url('/')}}/img/app/logotipo.jpg" style="width: 10%; margin-top: 2%;">
+<img align="right" src="{{url('/')}}/img/app/Logotipo.jpg" style="width: 10%; margin-top: 2%;">
 </div><br><br><br><br><br><br><br>
   <div align="center">
           <font size="1">"FORMATO PARA USO EXCLUSIVO DE LA EMPRESA D&D 2311 SERVICE AND SOLUTIONS"</font>

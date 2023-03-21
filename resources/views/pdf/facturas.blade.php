@@ -153,7 +153,7 @@
             <br><b>recaudacion.pantoja@gmail.com</b>
             </td>
             <td>
-              <img src="{{ public_path()}}/img/app/logotipo.jpg" width="100" height="90" alt="">
+              <img src="{{ public_path()}}/img/app/Logotipo.jpg" width="100" height="90" alt="">
             </td>
           </tr>
         </table><br><br><br>
