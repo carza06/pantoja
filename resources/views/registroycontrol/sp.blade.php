@@ -128,7 +128,7 @@
 										<i class="ace-icon fa fa-phone"></i>
 									</span>
 
-									<input class="form-control input-mask-phone" placeholder="(999) 999-9999" name ="telefonoprincipal" type="text" id="form-field-mask-2">
+									<input class="form-control input-mask-phone" min="0" max="3" placeholder="(999) 999-9999" name ="telefonoprincipal" type="number" id="form-field-mask-2">
 								</div>
 							</div>
 

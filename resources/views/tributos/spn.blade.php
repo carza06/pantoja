@@ -97,7 +97,7 @@
 										<i class="ace-icon fa fa-phone"></i>
 									</span>
 
-									<input class="form-control input-mask-phone" name ="telefonoprincipal" type="text" id="form-field-mask-2">
+									<input class="form-control input-mask-phone" name ="telefonoprincipal" type="number" id="form-field-mask-2">
 								</div>
 							</div>
 
@@ -112,7 +112,7 @@
 										<i class="ace-icon fa fa-phone"></i>
 									</span>
 
-									<input class="form-control input-mask-phone" name = "telefonosecundario" type="text" id="form-field-mask-2">
+									<input class="form-control input-mask-phone" name = "telefonosecundario" type="number" id="form-field-mask-2">
 								</div>
 							</div>
 							<div>

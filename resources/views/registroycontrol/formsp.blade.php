@@ -176,7 +176,7 @@ $submenu = 'R.U.C';
 													<i class="ace-icon fa fa-phone"></i>
 												</span>
 
-												<input class="form-control input-mask-phone" name ="telefonoprincipal" type="text" value="{{ $sp["telefonoprincipal"] }} ">
+												<input class="form-control input-mask-phone" name ="telefonoprincipal" type="number" value="{{ $sp["telefonoprincipal"] }} ">
 											</div>
 										</div>
 
@@ -191,7 +191,7 @@ $submenu = 'R.U.C';
 													<i class="ace-icon fa fa-phone"></i>
 												</span>
 
-												<input class="form-control input-mask-phone" name = "telefonosecundario" type="text" value="{{ $sp["telefonoprincipal"] }} ">
+												<input class="form-control input-mask-phone" name = "telefonosecundario" type="number" value="{{ $sp["telefonoprincipal"] }} ">
 											</div>
 										</div>
 										<div>
