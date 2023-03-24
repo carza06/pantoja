@@ -163,7 +163,7 @@ class TaquillaController extends Controller
 			$detalle[] = array($descripcion,$pago['monto']);
 		}
 		
-		$view =  \View::make('pdf.comprobante')->with(['comprobante'=>$comprobante,'sp'=>$sp,'pago'=>$pago,'detalle'=>$detalle])->render();
+		$view =  \View::make('pdf.comprobante', compact('data'))->with(['comprobante'=>$comprobante,'sp'=>$sp,'pago'=>$pago,'detalle'=>$detalle])->render();
 		$pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         return $pdf->stream('comprobante.pdf');		
