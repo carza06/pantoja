@@ -1,8 +1,9 @@
-
 <div >
                   <table width="50%"  border="1" style="border-spacing: 0;" align="right">
+                  <tr>
                   <td align="center" style="background-color: blue; color: #ffffff">COMPROBANTE DE PAGO</td>
                   <td style="background-color: blue; color: #ffffff"></td>  
+                  </tr>
                   <tr>
                       <td >
                         Nro. DE CONTROL:
@@ -24,4 +25,4 @@
                     </tr>
            
                   </table>
-                  </div>
+                  </div><br>
