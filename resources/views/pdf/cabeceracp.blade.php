@@ -19,12 +19,12 @@
                       </td>
                       <td align="center">{{ $pago['fechapago'] }}</td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                       <td >
                         USUARIO: 
                       </td>
                       <td align="center">{{ $pago->sesion->usuario->nombre }}</td>
-                    </tr>
+                    </tr> -->
                     <tr>
                       <td >
                         FORMA DE PAGO: 
