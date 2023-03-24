@@ -7,19 +7,13 @@
                       <td >
                         Nro. DE CONTROL:
                       </td>
-                      <td></td>
+                      <td>{{ $comprobante }}</td>
                     </tr>
                     <tr>
                       <td >
                         FECHA: 
                       </td>
                       <td align="center">{{ $pago['fechapago'] }}</td>
-                    </tr>
-                    <tr>
-                      <td >
-                        USUARIO: 
-                      </td>
-                      <td align="center">{{ $pago->sesion->usuario->nombre }}</td>
                     </tr>
                     <tr>
                       <td >
