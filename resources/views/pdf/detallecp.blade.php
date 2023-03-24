@@ -52,4 +52,3 @@
   <div align="center">
           <font size="1">"FORMATO PARA USO EXCLUSIVO DE LA EMPRESA D&D 2311 SERVICE AND SOLUTIONS"</font>
   </div>
-  <div style="page-break-after:always;"></div>
