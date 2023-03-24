@@ -229,6 +229,7 @@ class TaquillaController extends Controller
 					break;
 				case '2':
 					$descripcion = 'Pago por Tarjeta de '.$request->tipotarjeta.' '.$request->codtar;
+					$this->insertartarjeta($idpago,$request->idbanco,$request->idtipotarjeta,$request->titular,$request->nrotarjeta,$request->voucher);
 					break;
 				case '3':
 					$descripcion = 'Pago en Cheque Nro:'.$request->nrocheque;
@@ -328,6 +329,20 @@ class TaquillaController extends Controller
 		$chq->nrodecuenta=$nrodecuenta;
 		$chq->titular=$titular;
 		$chq->save();
+		return;	
+	}
+
+	public function insertartarjeta($idpago,$idbanco,$idtipotarjeta,$titular,$nrotarjeta,$voucher)
+	{
+		$tarj = new \App\Modelos\Taquilla\Tarjetas();
+		$tarj->idpago = $idpago;
+		$tarj->idbanco=$idbanco;
+		$tarj->idtipotarjeta=$idtipotarjeta;
+		$tarj->idpunto=1;
+		$tarj->titular=$titular;
+		$tarj->nrotarjeta=$nrotarjeta;
+		$tarj->voucher=$voucher;
+		$tarj->save();
 		return;	
 	}
 

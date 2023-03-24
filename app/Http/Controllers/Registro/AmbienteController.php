@@ -132,7 +132,7 @@ class AmbienteController extends Controller
                        
                 }else{
                     $idfrecuencia = 1;
-                    $impuesto =  $request->mobjecion * 12;
+                    $impuesto =  $request->mobjecion;
                     $baseimp = $impuesto;
                        
                 }

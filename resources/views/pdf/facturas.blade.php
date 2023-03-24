@@ -34,7 +34,7 @@
                 <tr>
                   <table width="100%"  border="0.1" style="border-spacing: 0;">
                     <tr>
-                      <td align="center" style="background-color: blue;">
+                      <td align="center" >
                         FACTURACIÓN
                       </td>
                     </tr>

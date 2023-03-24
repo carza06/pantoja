@@ -14,7 +14,6 @@
           <div class="page-content">
           @include('pdf.headerreportes')
           <div align="center"><h3>Cierre Diario<h3></div>
-          <hr>
           @include('reportes.totalpagoscierre')
           </div>
         </div>

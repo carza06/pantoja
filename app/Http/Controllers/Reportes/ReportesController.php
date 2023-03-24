@@ -159,6 +159,19 @@ class ReportesController extends Controller
                     break;
                 case 2:
                     # Puntos de Venta
+                    $verifone = \App\Modelos\Taquilla\Tarjetas::where('idpago',$value->id)
+                    ->select('tarjetas.*', 'bancos.banco','tipotarjeta.tipotarjeta')
+                    ->join('bancos', 'tarjetas.idbanco', 'bancos.id')
+                    ->join('tipotarjeta', 'tipotarjeta.id', 'tarjetas.idtipotarjeta')->first();
+                    $puntovt[] = array($id,
+                                    $verifone->tipotarjeta,
+                                    $verifone->banco,
+                                    $descripcion,
+                                    $comprobante,
+                                    $sp[0]['nombre_razonsocial'],
+                                    $value->monto
+                                        );
+          
                     break;
                 case 3:
                     # Cheque
@@ -187,16 +200,16 @@ class ReportesController extends Controller
                     # code...
                     break;
             }
+
         }
         //dd($cheques);
         if($request->imprimir){
-            $view =  \View::make('pdf.pagos')->with(['efectivo'=>$efectivo,'cheques'=>$cheques,'transferencias'=>$transferencias,'fecha'=>$fecha])->render();
-            return $view;
+            $view =  \View::make('pdf.pagos')->with(['efectivo'=>$efectivo,'cheques'=>$cheques,'transferencias'=>$transferencias, 'verifone'=>$puntovt,'fecha'=>$fecha])->render();
             $pdf = \App::make('dompdf.wrapper');
             $pdf->loadHTML($view);
             return $pdf->stream('pagos.pdf');
         }else{
-            return view('reportes.pagos')->with(['efectivo'=>$efectivo,'cheques'=>$cheques,'transferencias'=>$transferencias,'fecha'=>$fecha]);            
+            return view('reportes.pagos')->with(['efectivo'=>$efectivo,'cheques'=>$cheques,'transferencias'=>$transferencias, 'verifone'=>$puntovt, 'fecha'=>$fecha]);            
         }
     }
 }

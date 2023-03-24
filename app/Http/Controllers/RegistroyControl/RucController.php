@@ -82,6 +82,10 @@ class RucController extends Controller
 							if($billares->count() > 0){
 								$lae[] = array($tributo['id'],$ubg['direccion'],'Billares',$edomonto,$u);	
 							}
+							$ambiente = \App\Modelos\Tributos\AmbienteYDrenaje::where('idtributo',$tributo['id'])->get();
+							if($ambiente->count() > 0){
+								$lae[] = array($tributo['id'],$ubg['direccion'],'Ambiente y Drenaje',$edomonto,$u);	
+							}
 							//dd($tipolicencia);
 							//$lae[] = array($tributo['id'],$ubg['direccion'],$tipolicencia['tipolicencia'],$edomonto);
 							break;

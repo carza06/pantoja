@@ -50,13 +50,12 @@ class SujetoPasivo extends Model
     public function scopeComprobantesTasas($query,$id)
     {
     
-        $query->select('p.id','fp.formapago','u.usuario','p.fechapago','pt.monto')
+        $query->select('p.id','fp.formapago','p.fechapago','pt.monto')
               ->join('tramites as tt','tt.idsujetopasivo','=','sujetopasivo.id')
               ->join('pagos as p','p.id','=','tt.idpago')
               ->join('pagostasas as pt','pt.idpago','=','p.id')
               ->join('formaspagos as fp','fp.id','=','p.idformapago')
-              ->join('sessions as ss','ss.id','=','p.idsession')
-              ->join('users as u','u.id','=','ss.user_id')
+
               ->where('p.idstatus','=',1)
               ->where('sujetopasivo.id','=',$id) ;        
         return $query;   
@@ -150,14 +149,12 @@ class SujetoPasivo extends Model
     public function scopeComprobantesTributos($query,$id)
     {
     
-        $query->select('p.id','fp.formapago','u.usuario','p.fechapago','p.monto')
+        $query->select('p.id','fp.formapago','p.fechapago','p.monto')
               ->join('sujetopasivo_tributo as st','st.idsujetopasivo','=','sujetopasivo.id')
               ->join('tributo as t','t.id','=','st.idtributo')
               ->join('pagostributos as pt','pt.idtributo','=','t.id')
               ->join('pagos as p','p.id','=','pt.idpago')              
               ->join('formaspagos as fp','fp.id','=','p.idformapago')
-              ->join('sessions as ss','ss.id','=','p.idsession')
-              ->join('users as u','u.id','=','ss.user_id')
               ->where('sujetopasivo.id','=',$id)
               ->where('p.idstatus','=',1)
               ->groupby('p.id')->get() ;        

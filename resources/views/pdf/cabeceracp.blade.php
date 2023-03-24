@@ -1,6 +1,11 @@
+<style>
+  td{
+    font-size: 10px;
+  }
+</style>
 <div style="margin-bottom: 150px;">
                   <table width="50%"  border="1" style="border-spacing: 0;" align="right">
-                  <td align="center" style="background-color: blue; color: #ffffff">Comprobante de pago</td>
+                  <td align="center" style="background-color: blue; color: #ffffff">COMPROBANTE DE PAGO</td>
                   <td style="background-color: blue; color: #ffffff"></td>  
                   <tr>
                       <td >

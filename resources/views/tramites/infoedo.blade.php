@@ -77,6 +77,7 @@
   <div class="row">
 	<div class="col-xs-12">
 		<div class="space-12"></div>
+		
 		<div class="btn-group btn-corner pull-right">
 			<a href="/main/estadodecuenta/{{$idtributo}}/imprimir" target="_blank" class="btn btn-info"><i class="fa fa-print"></i></a>
 			@if(isset($ds))
@@ -85,7 +86,7 @@
 			@if(isset($pub) || $amb == 1)
 			<a href="{{ route('imprimirfacturapub',[$idtributo])}}" target="_blank"  class="btn btn-info"><i class="fa fa-file-text"></i></a>
 			@endif
-			<button class="btn btn-info"><i class="fa fa-envelope-o"></i></button>
+			<a href="/main/facturacion/{{$email->email}}" target="_blank"  class="btn btn-info"><i class="fa fa-envelope-o"></i></a>
 			<button class="btn btn-info">Metodos de pagos</button>
 			@if($total > 0)
 			<button class="btn btn-success" data-toggle="modal" data-target="#efectivo" data-toggle="tooltip" data-placement="top" title="Efectivo"><i class="fa fa-money"></i></button>

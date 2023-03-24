@@ -45,6 +45,56 @@
 			</div>
 		</div>
 		@endif
+		@if(isset($verifone))
+		<div class="col-xs-8" style="float:none !important; margin: 0 auto">
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h6>
+						<i class="fa fa-money"></i>
+						Tarjetas
+					</h6>
+				</div>
+				<div class="panel-body">
+				<table id="simple-table" class="table table-bordered table-hover">
+						<thead>
+							<tr>
+								<th>Nro Comprobante</th>								
+								<th>Id</th>
+								<th>Nombre | Razon Social</th>
+								<th>Descripcion</th>
+								<th>Banco</th>
+								<th>Tipo tarjeta</th>
+								<th>Monto RD$</th>
+							</tr>
+						</thead>														
+						<tbody>
+						@php ($totaleverifone = 0)
+						@for($i = 0;$i < count($verifone); $i++)
+						
+							<tr>
+								<td>{{$verifone[$i][4]}}</td>
+								<td>{{$verifone[$i][0]}}</td>
+								<td>{{$verifone[$i][5]}}</td>
+								<td>{{$verifone[$i][3]}}</td>
+								<td>{{$verifone[$i][2]}}</td>
+								<td>{{$verifone[$i][1]}}</td>
+								<td><p class="pull-right">{{number_format($verifone[$i][6],2)}}</p></td>
+							</tr>
+								@php 
+									$totaleverifone += $verifone[$i][6];
+									$total += $verifone[$i][6];
+								@endphp
+						@endfor
+							<tr>
+								<td align="right" colspan="4">Total Tarjetas RD$</td>
+								<td><p class="pull-right">{{number_format($totaleverifone,2) }}</p></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		@endif
 		@if(isset($cheques))
 		<div class="col-xs-8" style="float:none !important; margin: 0 auto">
 			<div class="panel panel-primary">
@@ -152,3 +202,4 @@
 			</div>
 		</div>
 		@endif
+

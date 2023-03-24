@@ -1,5 +1,7 @@
 <?php
 use Illuminate\Support\Facades\Route;
+use App\Mail\facturasMail;
+use Illuminate\Support\Facades\Mail;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +32,12 @@ Auth::routes();
 Route::get('/main', 'HomeController@index')->name('main');
 
 
+Route::get('/main/facturacion/{email}', function($email){
+	$correo = new facturasMail;
+	Mail::to($email)->send($correo);
+
+	return "mensaje enviado";
+});
 
 /*
 |--------------------------------------------------------------------------

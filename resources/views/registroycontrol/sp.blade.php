@@ -128,7 +128,7 @@
 										<i class="ace-icon fa fa-phone"></i>
 									</span>
 
-									<input class="form-control input-mask-phone" min="0" max="3" placeholder="(999) 999-9999" name ="telefonoprincipal" type="number" id="form-field-mask-2">
+									<input class="form-control input-mask-phone" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" placeholder="(999) 999-9999" name ="telefonoprincipal" type="number" id="form-field-mask-2">
 								</div>
 							</div>
 

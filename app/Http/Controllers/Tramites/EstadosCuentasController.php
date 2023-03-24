@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Tramites;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Modelos\Tributos\SujetoPasivo_Tributo;
 
 class EstadosCuentasController extends Controller
 {
@@ -14,7 +15,10 @@ class EstadosCuentasController extends Controller
 
     public function index(Request $request)
     {
-        if($request->idtributo){          
+        if($request->idtributo){    
+          $email = SujetoPasivo_Tributo::select('sp.email')->where('idtributo', $request->idtributo)
+          ->join('sujetopasivo as sp', 'sujetopasivo_tributo.idsujetopasivo', 'sp.id')->first();
+    
           $idtributo = $request->idtributo;
           \Session::put('IdTributo',$idtributo);
           list($sp,$ubg,$inm,$ds,$pub,$edo,$amb) = $this->infotributo($idtributo);
@@ -33,7 +37,7 @@ class EstadosCuentasController extends Controller
             return $pdf->download($archivo);
            
           }else{
-            return view('tramites.edocuenta')->with(['sp'=>$sp, 'amb'=>$amb, 'ubg'=>$ubg,'inm'=>$inm,'ds'=>$ds,'pub'=>$pub,'edo'=>$edo,'bancos'=>$bancos,'facturas'=>$facturas]);
+            return view('tramites.edocuenta')->with(['sp'=>$sp, 'email' => $email, 'amb'=>$amb, 'ubg'=>$ubg,'inm'=>$inm,'ds'=>$ds,'pub'=>$pub,'edo'=>$edo,'bancos'=>$bancos,'facturas'=>$facturas]);
           }
         }
         return view('tramites.edocuenta');

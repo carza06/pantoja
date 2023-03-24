@@ -108,7 +108,7 @@ $route ='resumen';
 					<thead>
 						<tr>
 							<th>Id Pago</th>
-							<th>Cargado por</th>
+							<!-- <th>Cargado por</th> -->
 							<th>Fecha</th>
 							<th>Forma de Pago</th>							
 							<th>Monto RD$</th>
@@ -121,7 +121,7 @@ $route ='resumen';
 						@php ($pp = 0)
 						@foreach ($pagostributos as $tributos)
 							<td>{{$tributos->id}}</td>
-							<td>{{$tributos->usuario}}</td>
+							<!-- <td>{{$tributos->usuario}}</td> -->
 							<td>{{$tributos->fechapago}}</td>
 							<td>{{$tributos->formapago}}</td>
 							<td>{{number_format($tributos->monto,2)}}</td>
@@ -160,7 +160,7 @@ $route ='resumen';
 					<thead>
 						<tr>
 							<th>Id Pago</th>
-							<th>Cargado por</th>
+							<!-- <th>Cargado por</th> -->
 							<th>Fecha</th>
 							<th>Forma de Pago</th>							
 							<th>Monto RD$</th>
@@ -173,7 +173,7 @@ $route ='resumen';
 						@foreach ($pagostasas as $tasas)
 						<tr>
 							<td>{{$tasas->id}}</td>
-							<td>{{$tasas->usuario}}</td>
+							<!-- <td>{{$tasas->usuario}}</td> -->
 							<td>{{$tasas->fechapago}}</td>
 							<td>{{$tasas->formapago}}</td>
 							<td>{{number_format($tasas->monto,2)}}</td>
