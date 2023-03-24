@@ -25,7 +25,7 @@
                     </tr>
            
                   </table>
-                  </div>
+                  </div><br>
 <div class="col-xs-12" style="border: 1px solid black;">
 <table width="100%"  >
   <tr>
