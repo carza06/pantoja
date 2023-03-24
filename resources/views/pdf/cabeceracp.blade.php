@@ -1,8 +1,4 @@
-<style>
-  td{
-    font-size: 10px;
-  }
-</style>
+
 <div >
                   <table width="50%"  border="1" style="border-spacing: 0;" align="right">
                   <td align="center" style="background-color: blue; color: #ffffff">COMPROBANTE DE PAGO</td>
