@@ -1,4 +1,4 @@
-<div style="margin-bottom: 1500px;">
+<div>
                   <table width="50%"  border="1" style="border-spacing: 0;" align="right">
                   <tr>
                   <td align="center" style="background-color: blue; color: #ffffff">Comprobante de pago</td>

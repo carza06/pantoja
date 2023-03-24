@@ -1,5 +1,5 @@
 
-<div class="col-xs-12" style="border: 1px solid black;">
+<div class="col-xs-12" style="border: 1px solid black; margin-top: 150px;">
 <table width="100%"  >
   <tr>
     <td width="50%">NOMBRE|RAZON SOCIAL:</td>
