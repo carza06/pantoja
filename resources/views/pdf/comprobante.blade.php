@@ -15,7 +15,6 @@
           <div class="page-content">
           @include('pdf.headerreportes')
          
-          @include('pdf.cabeceracp')
           <br>
           @include('pdf.contribuyentecp')
             <br>
