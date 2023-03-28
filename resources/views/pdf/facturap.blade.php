@@ -86,11 +86,11 @@
           </tr>
           <tr>
             <td>TELEFONOS:</td>
-            <td></td>
+            <td>{{ $sp->telefonoprincipal}}</td>
           </tr>
           <tr>
             <td>CORREO:</td>
-            <td></td>
+            <td>{{$sp->email}}</td>
           </tr>
           <tr>
             <td>DIRECCIÓN:</td>
@@ -128,7 +128,9 @@
     </tr>
     </table>
     <font size="1"> (*) ESTA FACTURA ESTA SUJETA A REVISION POR PARTE DE LA JUNTA MUNICIPAL DE PANTOJA</font>
-        <br><br><br><br><br>
+        <div class="col-xs-12">
+          <img align="right" src="{{ url('/')}}/img/app/sello2.jpg" alt="">
+        </div>
         <table width="100%">
           <tr>
 

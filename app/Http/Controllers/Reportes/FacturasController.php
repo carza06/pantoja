@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Reportes;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Modelos\Tributos\SujetoPasivo_Tributo;
 
 class FacturasController extends Controller
 {
@@ -257,12 +258,15 @@ class FacturasController extends Controller
 		}
 
 		$data = \App\Modelos\Facturacion\Facturas::find($id[0]['id']);
+		$sup =  SujetoPasivo_Tributo::selecT('sp.*')->where('idtributo', $data->idtributo)
+		->join('sujetopasivo as sp', 'sujetopasivo_tributo.idsujetopasivo', 'sp.id')
+		->first();
 	   	if($data->idtipofactura <> 2){
-			$view =  \View::make('pdf.facturan')->with(['data'=>$data,'periodo'=>$periodo])->render();	
+			$view =  \View::make('pdf.facturan')->with(['data'=>$data,'periodo'=>$periodo, 'sp'=>$sup])->render();	
 		}else{
 			$view =  \View::make('pdf.factura', compact('data'))->render();	
 		}
-		
+		return $view;
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
         return $pdf->stream('factura.pdf');	
@@ -272,7 +276,10 @@ class FacturasController extends Controller
 		$id = \App\Modelos\Facturacion\Facturas::where('idtributo',$request->id)->orderby('id','desc')->limit(1)->get()->toarray();	
 
 		$data = \App\Modelos\Facturacion\Facturas::find($id[0]['id']);
-		$view =  \View::make('pdf.facturap')->with(['data'=>$data])->render();	
+		$sup =  SujetoPasivo_Tributo::selecT('sp.*')->where('idtributo', $data->idtributo)
+		->join('sujetopasivo as sp', 'sujetopasivo_tributo.idsujetopasivo', 'sp.id')
+		->first();
+		$view =  \View::make('pdf.facturap')->with(['data'=>$data, 'sp'=>$sup])->render();	
 		
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view);
